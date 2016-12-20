@@ -5,7 +5,7 @@
 ** Login   <artha@epitech.net>
 **
 ** Started on  Mon Dec 12 19:28:17 2016 dylan renard
-** Last update Sun Dec 18 16:38:18 2016 dylan renard
+** Last update Tue Dec 20 21:10:22 2016 dylan renard
 */
 
 #include "sokoban.h"
@@ -38,13 +38,16 @@ int		update(t_curse *prog)
 {
   int		statut;
 
-  draw_map(prog);
-  refresh();
-  statut = input_manager(prog);
-  if (is_victory(prog))
+  if (must_resize(prog))
+    {
+      draw_map(prog);
+      refresh();
+    }
+    if (is_victory(prog))
     return (2);
   else if (is_failure(prog, 0, 0, 0))
     return (3);
+  statut = input_manager(prog);
   erase();
   return (statut);
 }

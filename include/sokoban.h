@@ -5,7 +5,7 @@
 ** Login   <artha@epitech.net>
 **
 ** Started on  Sun Dec 18 14:07:32 2016 dylan renard
-** Last update Sun Dec 18 17:03:49 2016 dylan renard
+** Last update Tue Dec 20 20:29:54 2016 dylan renard
 */
 
 #ifndef SOKOBAN_H_
@@ -13,6 +13,8 @@
 # define BUFFER_SIZE	4096
 #include <stdlib.h>
 #include <ncurses.h>
+#include <signal.h>
+#include <sys/ioctl.h>
 #include <fcntl.h>
 #include "my.h"
 
@@ -28,6 +30,12 @@ typedef struct		s_curse
   int			z;
   char			*name;
 }			t_curse;
+
+typedef struct		s_sok
+{
+  int			w;
+  int			h;
+}			t_sok;
 
 char		**new_map(char *, int, int, int);
 void		draw_map(t_curse *);

@@ -5,7 +5,7 @@
 ## Login   <artha@epitech.net>
 ## 
 ## Started on  Mon Nov  7 15:05:57 2016 dylan renard
-## Last update Sun Dec 18 16:55:10 2016 dylan renard
+## Last update Tue Dec 20 20:35:42 2016 dylan renard
 ##
 
 CC	= 	gcc
@@ -18,6 +18,7 @@ SRCS	=	src/input.c	\
 		src/input2.c	\
 		src/input3.c	\
 		src/game.c	\
+		src/verif.c	\
 		src/map.c	\
 		src/curse.c	\
 		src/main.c

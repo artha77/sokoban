@@ -5,7 +5,7 @@
 ** Login   <artha@epitech.net>
 **
 ** Started on  Sun Dec 18 14:23:17 2016 dylan renard
-** Last update Tue Dec 20 14:56:27 2016 dylan renard
+** Last update Tue Dec 20 21:11:10 2016 dylan renard
 */
 
 #include "sokoban.h"
@@ -74,9 +74,9 @@ void		count_item(t_curse *prog)
   prog->item = 0;
   while (prog->map[i] != NULL)
     {
-      if (prog->map[i][j] == 'O')
+      if (prog->map[i][j] == 'O' || prog->map[i][j] == 'Z')
 	(prog->contener)++;
-      else if (prog->map[i][j] == 'X')
+      if (prog->map[i][j] == 'X' || prog->map[i][j] == 'Z')
 	(prog->item)++;
       j++;
       if (prog->map[i][j] == '\0')
