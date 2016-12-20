@@ -5,7 +5,7 @@
 ** Login   <artha@epitech.net>
 **
 ** Started on  Sun Dec 18 14:13:45 2016 dylan renard
-** Last update Sun Dec 18 16:52:20 2016 dylan renard
+** Last update Tue Dec 20 14:43:43 2016 dylan renard
 */
 
 #include "sokoban.h"
@@ -48,7 +48,7 @@ void		draw_map(t_curse *prog)
   while (prog->map[i] != NULL)
     {
       if (prog->map[i][j] == '#')
-	put_pixel(j, i, COLOR_BLUE);
+	mvprintw(i, j, "#");
       else if (prog->map[i][j] == 'P')
 	mvprintw(i, j, "P");
       else if (prog->map[i][j] == 'O')

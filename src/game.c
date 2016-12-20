@@ -5,7 +5,7 @@
 ** Login   <artha@epitech.net>
 **
 ** Started on  Sun Dec 18 14:23:17 2016 dylan renard
-** Last update Sun Dec 18 17:04:13 2016 dylan renard
+** Last update Tue Dec 20 14:56:27 2016 dylan renard
 */
 
 #include "sokoban.h"
@@ -43,9 +43,9 @@ int		is_failure(t_curse *prog, int wall, int i, int j)
 	{
 	  if (prog->map[i][j + 1] == '#')
 	    wall++;
-	  if (prog->map[i][j - 1] == '#')
+	  if (prog->map[i][j - 1] == '#' && prog->map[i][j + 1] != '#')
 	    wall++;
-	  if (prog->map[i + 1][j] == '#')
+	  if (prog->map[i + 1][j] == '#' && prog->map[i - 1][j] != '#')
 	    wall++;
 	  if (prog->map[i - 1][j] == '#')
 	    wall++;
