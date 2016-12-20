@@ -5,7 +5,7 @@
 ** Login   <artha@epitech.net>
 **
 ** Started on  Mon Dec 12 19:28:17 2016 dylan renard
-** Last update Tue Dec 20 21:10:22 2016 dylan renard
+** Last update Tue Dec 20 21:37:07 2016 dylan renard
 */
 
 #include "sokoban.h"
@@ -30,6 +30,8 @@ t_curse		*start(char *name)
     return (NULL);
   player_pos_init(prog);
   count_item(prog);
+  if (is_valid_map(prog))
+    return (NULL);
   init_curse();
   return (prog);
 }

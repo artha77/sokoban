@@ -5,7 +5,7 @@
 ** Login   <artha@epitech.net>
 **
 ** Started on  Tue Dec 20 16:27:24 2016 dylan renard
-** Last update Tue Dec 20 21:02:50 2016 dylan renard
+** Last update Tue Dec 20 21:38:40 2016 dylan renard
 */
 
 #include "sokoban.h"
@@ -54,6 +54,56 @@ int			must_resize(t_curse *prog)
       midx = ctl.ws_col / 2 - my_strlen(text) / 2;
 	midy = ctl.ws_row / 2 - 1;
 	mvprintw(midy, midx, "%s", text);
+	return (0);
+    }
+  return (1);
+}
+
+int			is_valid_sign(char c)
+{
+  char			*sign;
+
+  sign = "XPO#";
+  while (sign[0] != '\0')
+    {
+      if (c != sign[0])
+	return (0);
+      sign++;
+    }
+  return (1);
+}
+
+int			wrong_item_count(t_curse *prog)
+{
+  if (prog->item != prog->contener)
+    return (1);
+  return (0);
+}
+
+int			is_valid_map(t_curse *prog)
+{
+  int			i;
+  int			j;
+  char			end;
+  char			beg;
+
+  i = 0;
+  j = 0;
+  if (wrong_item_count(prog))
+    return (0);
+  while (prog->map[i] != NULL)
+    {
+      if (j == 0)
+	beg = prog->map[i][j];
+      if (!(is_valid_sign(prog->map[i][j])))
+	return (0);
+      if (prog->map[i][j] == '\0')
+	{
+	  end = prog->map[i][j - 1];
+	  i++;
+	  j = 0;
+	}
+      if (beg != '#' && end != '#')
 	return (0);
     }
   return (1);
